@@ -1,5 +1,5 @@
 async function ucitajVrijeme() {
-  const adresa = "https://testni-web.onrender.com/api/vrijeme_Pula";
+  const adresa = "https://raspodjeljeni-sustavi-vjezbe-1.onrender.com/api/vrijeme_Pula";
 
   const odgovor = await fetch(adresa);
   const vrijeme = await odgovor.json();
