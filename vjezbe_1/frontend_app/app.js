@@ -23,4 +23,10 @@
 
 // document.getElementById("btn").addEventListener("click", ucitajVrijeme);
 
-document.getElementById("btn").addEventListener("click", lista.appendChild("Sve OK"));
+async function Oops() {
+    const lista = document.getElementById("vrijeme")
+    lista.innerHTML = ""
+    lista.appendChild("Sve je ok")
+}
+
+document.getElementById("btn").addEventListener("click", Oops);
