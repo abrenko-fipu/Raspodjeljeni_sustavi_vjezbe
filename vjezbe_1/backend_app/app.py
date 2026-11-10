@@ -25,11 +25,8 @@ def dohvati_vrijeme():
         "current": "temperature_2m,wind_speed_10m"
     }
 
-    odgovor = requests.get(url, params=parametri).json()['current']
-
-    temp= odgovor["temperature_2m"]
-    wind= odgovor["wind_speed_10m"]
-
-    return [temp, wind]
-
+    podaci = requests.get(url, params=parametri, timeout=10).json()
+    if "current" not in podaci:
+        return {"greska": podaci}
+    return [podaci["current"]["temperature_2m"], podaci["current"]["wind_speed_10m"]]
 
